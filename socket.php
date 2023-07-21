@@ -7,8 +7,8 @@ use Carpenstar\ByBitAPI\WebSockets\Channels\Spot\PublicChannels\Tickers\Argument
 use Source\WebTickersChanell;
 use WebSocket\Server;
 
-$server = new Server(['port' => 8001]);
-$server->setTimeout(86400);
+$server = new Server(['port' => getenv("WEBSOCKET_PORT")]);
+$server->setTimeout(86400); // By default - 60 sec
 
 (new BybitAPI(getenv("BYBIT_HOST"), getenv("BYBIT_APIKEY"), getenv("BYBIT_SECRET")))
     ->websocket(

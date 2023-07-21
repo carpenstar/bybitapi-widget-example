@@ -9,10 +9,8 @@
     }
   ],
   "require": {
-    "carpenstar/bybitapi-sdk-websockets": "dev-master"
+    "carpenstar/bybitapi-sdk-websockets": "3.0.0"
   },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "autoload": {
     "psr-4": {
       "Source\\": "src/"

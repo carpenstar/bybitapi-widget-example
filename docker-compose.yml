@@ -27,10 +27,11 @@ services:
     volumes:
       - ./:/app:rw
     environment:
-      BYBIT_HOST: wss://stream.bybit.com/spot/public/v3
-      BYBIT_APIKEY: xFe4SjtGCgMwUi6H8o
-      BYBIT_SECRET: SgnDSmKsCfE4dOyEPNxQQllb0YPCTsjPNn4X
+      BYBIT_HOST: ***
+      BYBIT_APIKEY: ***
+      BYBIT_SECRET: ***
       SYMBOL: BTCUSDT,ETHUSDT,LTCUSDT,MNTUSDT,XRPUSDT,ARBUSDT,APTUSDT
+      WEBSOCKET_PORT: 8001
     entrypoint: ["sh", "entrypoint.sh"]
     ports:
       - "8001:8001"
