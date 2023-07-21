@@ -1,0 +1,58 @@
+#widget-area {
+    width: 300px;
+    height: 230px;
+    padding: 15px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+#widget-header {
+    width: 100%;
+}
+
+.widget-header-cell, .widget-row-block {
+    width: 33%;
+    float: left;
+}
+
+.widget-row-block {
+    padding: 5px 0;
+}
+
+span.label {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#widget-body {
+    width: 100%;
+    float: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.ticker-data {
+    font-size: 14px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+#widget-header::after {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid black;
+    padding-top: 25px;
+    content: '';
+}
+
+.widget-row-line::after {
+    width: 100%;
+    display: block;
+    border-bottom: 1px dashed black;
+    content: "";
+    padding-top: 29px;
+}

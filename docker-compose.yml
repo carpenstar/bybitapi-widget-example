@@ -1,0 +1,47 @@
+version: '3.1'
+
+networks:
+  web-network:
+    driver: bridge
+
+services:
+
+  nginx:
+    container_name: nginx
+    restart: always
+    image: nginx
+    networks:
+      - web-network
+    volumes:
+      - ./vue/dist:/usr/share/nginx/html/:rw
+    ports:
+      - "8085:80"
+
+  php:
+    container_name: php
+    build: .
+    working_dir: /app
+    restart: always
+    networks:
+      - web-network
+    volumes:
+      - ./:/app:rw
+    environment:
+      BYBIT_HOST: wss://stream.bybit.com/spot/public/v3
+      BYBIT_APIKEY: xFe4SjtGCgMwUi6H8o
+      BYBIT_SECRET: SgnDSmKsCfE4dOyEPNxQQllb0YPCTsjPNn4X
+      SYMBOL: BTCUSDT,ETHUSDT,LTCUSDT,MNTUSDT,XRPUSDT,ARBUSDT,APTUSDT
+    entrypoint: ["sh", "entrypoint.sh"]
+    ports:
+      - "8001:8001"
+
+  node:
+    container_name: node
+    image: node
+    working_dir: /app
+    volumes:
+      - ./vue:/app:rw
+    command: bash -c "
+      npm install
+      && npm run build
+      "
