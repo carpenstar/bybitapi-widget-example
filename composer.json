@@ -9,7 +9,7 @@
     }
   ],
   "require": {
-    "carpenstar/bybitapi-sdk-websockets": "3.0.0"
+    "carpenstar/bybitapi-sdk-websockets": "3.0.*"
   },
   "autoload": {
     "psr-4": {
